@@ -11,7 +11,7 @@
   attribution link here!
 */
 
-sparkHue = .8       // Set the hue for each spark
+sparkHue = .75       // Set the hue for each spark
 sparkSaturation = 1  // Set the saturation for each spark (0 = white)
 numSparks = 1 + floor(pixelCount / 10)  // Scale number of sparks based on # LEDs
 decay = .99          // Decay their energy/speed. Use .999 for slower

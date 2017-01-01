@@ -39,5 +39,5 @@ export function render(index) {
   v = v * v
 
   // As we said up top, a hue of 0.3 is green
-  hsv(.9, a, v)
+  hsv(.75, a, v)
 }

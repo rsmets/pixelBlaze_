@@ -14,7 +14,7 @@
 
 
 // Speed that the rays travel down the strip
-speed = 0.01
+speed = 0.02
 
 // These vars are set by the external sensor board, if one is connected. We
 // don't actually use light readings in this pattern, so if the `light` value
