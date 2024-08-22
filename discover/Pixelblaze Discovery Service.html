@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<!-- saved from url=(0032)http://discover.electromage.com/ -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><script src="chrome-extension://fgddmllnllkalaagkghckoinaemmogpe/scripts/content/gps.js"></script>
+  
+  <title>Pixelblaze Discovery Service</title>
+  <link rel="stylesheet" href="./Pixelblaze Discovery Service_files/bootstrap.min.css">
+  <style>
+    body {
+      background-color: #111;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+      font-size: 1.0625rem;
+      font-weight: 300;
+      line-height: 1.6;
+    }
+
+    a {
+      color: #CF95FD;
+    }
+    .list-group-item span {
+      font-size: 80%;
+    }
+    .deviceType {
+      border-radius: 8px;
+      height: 4em;
+      padding: .5em;
+      font-weight: bold;
+      background-color: #575757;
+      border: 2px solid #d0d0d0;
+      box-shadow: 3px 3px 10px rgba(0,0,0,0.5);
+    }
+
+    .deviceType.stale {
+      background-color: #343434;
+      border: 2px solid #6c6c6c;
+      box-shadow: 3px 3px 10px rgba(255, 255, 255, 0.1);
+    }
+
+    .list-group-item {
+      color: white;
+    }
+
+    .list-group-item:hover {
+      background-color: #344a5a;
+      color: rgb(180, 255, 255);
+    }
+
+    .footer {
+      color: #6c757d;
+    }
+
+    .navbar  {
+      padding: 0.5rem 1rem;
+    }
+    .navbar-dark .navbar-nav .nav-link:not(.active) {
+      color: hsla(0,0%,100%,.55);
+    }
+
+
+  </style>
+</head>
+<body data-new-gr-c-s-check-loaded="14.1191.0" data-gr-ext-installed="">
+
+<nav class="navbar navbar-dark bg-black navbar-expand-md">
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#nav_collapse" aria-controls="nav_collapse" aria-expanded="false" aria-label="Toggle navigation" style="overflow-anchor: none;">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <a href="https://electromage.com/" class="navbar-brand" target="_self">
+    <img src="./Pixelblaze Discovery Service_files/em.png" alt="ElectroMage" height="70">
+  </a>
+  <div id="nav_collapse" class="navbar-collapse collapse">
+    <ul class="navbar-nav">
+      <li class="nav-item"><a href="https://shop.electromage.com/" target="_self" class="nav-link">Shop</a></li> 
+      <li class="nav-item"><a href="https://electromage.com/pixelblaze" class="nav-link" target="_self">Pixelblaze</a></li> 
+      <li class="nav-item"><a href="https://electromage.com/docs" class="nav-link" target="_self">Docs</a></li> 
+      <li class="nav-item"><a href="https://forum.electromage.com/" target="_self" class="nav-link">Forums</a></li> <li class="nav-item"><a href="https://electromage.com/patterns" class="nav-link" target="_self">Patterns</a></li> 
+      <li class="nav-item"><a href="http://discover.electromage.com/" target="_self" aria-current="page" class="nav-link nuxt-link-exact-active nuxt-link-active active">Discovery Service</a></li> 
+      <li class="nav-item"><a href="https://electromage.com/about" class="nav-link" target="_self">About</a></li>
+    </ul> 
+    <ul class="navbar-nav ml-auto"></ul>
+  </div>
+</nav>
+
+<div class="container">
+  <header class="header clearfix my-4">
+    <h2 class="text-muted">Pixelblaze Discovery Service</h2>
+  </header>
+
+  <main role="main">
+    <div class="jumbotron">
+      <h1 class="display-6">Here's what I found</h1>
+      <div class="list-group col-lg-10" id="list"><a href="http://192.168.50.133/" target="_blank" class="list-group-item"><div class="row"><div class="col-md-3"><div class="deviceType active">Pixelblaze V3 Standard</div></div><div class="col-md-9"><h3>PBsv3_Slave at 192.168.50.133</h3><span>Firmware: v3.51, active</span></div></div></a><a href="http://192.168.50.44/" target="_blank" class="list-group-item"><div class="row"><div class="col-md-3"><div class="deviceType stale">Pixelblaze V3 Standard</div></div><div class="col-md-9"><h3>PBsv3_Leader at 192.168.50.44</h3><span>Firmware: v3.51, last seen 66 minutes ago</span></div></div></a></div>
+    </div>
+
+    <div class="row">
+      <div class="col-lg-6">
+        <h4>What if my Pixelblaze doesn't show up?</h4>
+        <p>Give it a minute after powering on and reload this page. If that still isn't working, try setting up WiFi
+          again and make sure to enable the discovery option!</p>
+        <p>See the <a href="https://electromage.com/docs">docs page</a> for information about WiFi settings.</p>
+      </div>
+    </div>
+
+  </main>
+
+  <footer class="footer">
+    <p>© Hencke Technologies, Inc. / ElectroMage 2023</p>
+  </footer>
+
+</div> <!-- /container -->
+
+<script>
+
+  function htmlEntities(str) {
+    return String(str).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+  }
+
+  function formatBoardType(bt) {
+    switch (bt) {
+      case "esp8266" : return "Pixelblaze V2/2+";
+      case "pb32" : return "Pixelblaze V3 Standard";
+      case "pico32" : return "Pixelblaze V3 Pico";
+      default: return "Pixelblaze";
+    }
+  }
+
+  function formatLastSeen(d) {
+    var t = Date.parse(d);
+    var now = new Date().getTime();
+    var delta = now - t;
+    console.log(d, delta);
+    if (delta < 3610000) {
+      return "active";
+    }
+    return "last seen " + Math.round(delta/60000) + " minutes ago";
+  }
+
+  var xmlhttp = new XMLHttpRequest();
+  var url = "discover";
+
+  function processResult() {
+    if (this.readyState === 4 && this.status === 200) {
+      var data = JSON.parse(this.responseText);
+      var ul = document.getElementById("list");
+
+      if (data.length === 0) {
+        ul.innerHTML = '<li class="list-group-item"><h3>No Pixelblaze controllers have registered yet.</h3></li>';
+      } else {
+        ul.innerHTML = data.map(function (item) {
+          var type = item.id.split("_")[0];
+          var name = item.name;
+          var lastSeen = formatLastSeen(item.createdAt);
+          var deviceClass = lastSeen == "active" ? "active" : "stale";
+          return '<a href="http://' + htmlEntities(item.localIp) + '" target="_blank" class="list-group-item"><div class="row">' +
+              '<div class="col-md-3"><div class="deviceType ' + deviceClass+ '">' + formatBoardType(item.boardType) +  '</div></div>' +
+              '<div class="col-md-9"><h3>' + htmlEntities(name || type) + ' at ' + htmlEntities(item.localIp) + '</h3>' +
+              '<span>Firmware: v' + htmlEntities(item.version) + ', ' + lastSeen + '</span></div>' +
+              '</div></a>';
+        }).join('');
+      }
+    }
+  };
+
+  xmlhttp.onreadystatechange = processResult;
+  xmlhttp.open("GET", url, true);
+  xmlhttp.send();
+</script>
+
+<script src="./Pixelblaze Discovery Service_files/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<!-- Only if Tooltips/Dropdowns needed -->
+<!--
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+-->
+<script src="./Pixelblaze Discovery Service_files/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+
+
+<div id="hl-aria-live-message-container" aria-live="polite" class="visually-hidden"></div><div id="hl-aria-live-alert-container" role="alert" aria-live="assertive" class="visually-hidden"></div></body><grammarly-desktop-integration data-grammarly-shadow-root="true"><template shadowrootmode="open"><style>
+      div.grammarly-desktop-integration {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        padding: 0;
+        margin: -1px;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+        white-space: nowrap;
+        border: 0;
+        -moz-user-select: none;
+        -webkit-user-select: none;
+        -ms-user-select:none;
+        user-select:none;
+      }
+
+      div.grammarly-desktop-integration:before {
+        content: attr(data-content);
+      }
+    </style><div aria-label="grammarly-integration" role="group" tabindex="-1" class="grammarly-desktop-integration" data-content="{&quot;mode&quot;:&quot;full&quot;,&quot;isActive&quot;:true,&quot;isUserDisabled&quot;:false}"></div></template></grammarly-desktop-integration></html>
